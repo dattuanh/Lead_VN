@@ -357,7 +357,10 @@
 "Assets/Scripts/Dat/obstacle_spawner.cs"
 "Assets/Scripts/Dat/parallax.cs"
 "Assets/Scripts/Dat/SpeedManager.cs"
+"Assets/Scripts/Hieu/AudioManager.cs"
 "Assets/Scripts/Hieu/GameManager.cs"
+"Assets/Scripts/Hieu/MainMenu.cs"
+"Assets/Scripts/Hieu/VolumeManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+
