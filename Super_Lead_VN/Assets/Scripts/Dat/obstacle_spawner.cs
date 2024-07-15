@@ -16,14 +16,16 @@ public class obstacle_spawner : MonoBehaviour
     public float minSpawnRate = 1f;
     public float maxSpawnRate = 2f;
 
+    public GameObject finishingPointPrefab;
+    public float spawnDuration = 30f; // duration in seconds after which the finishing point will be spawned
 
+    private bool stopSpawning = false;
 
-    //public GameObject prefab;
-    //public float spawnRate;
-    //public float spawnDelay = 3f;
 
     private void OnEnable()
     {
+        StartCoroutine(SpawnFinishingPointAfterDuration(spawnDuration));
+
         //InvokeRepeating(nameof(Spawn), spawnRate, spawnDelay);
         Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
     }
@@ -36,6 +38,7 @@ public class obstacle_spawner : MonoBehaviour
 
     private void Spawn()
     {
+        if (stopSpawning) return;
         //spawnRate = Random.Range(0, 4);
         //GameObject obstacle = Instantiate(prefab, transform.position, Quaternion.identity);
 
@@ -45,7 +48,6 @@ public class obstacle_spawner : MonoBehaviour
             if (spawnChance < obj.spawnChance)
             {
                 GameObject obstacle = Instantiate(obj.prefab_1, transform.position, Quaternion.identity);
-                //obstacle.transform.position += transform.position;
                 break;
             }
 
@@ -53,6 +55,15 @@ public class obstacle_spawner : MonoBehaviour
         }
 
         Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+    }
+
+    private IEnumerator SpawnFinishingPointAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        stopSpawning = true;
+
+        Vector3 finishingPointPosition = new Vector3(14.0568f, -2.3668f, -1f);
+        Instantiate(finishingPointPrefab, finishingPointPosition, Quaternion.identity);
     }
 
 }
