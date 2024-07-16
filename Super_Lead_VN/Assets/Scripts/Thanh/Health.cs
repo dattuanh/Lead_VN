@@ -16,10 +16,20 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = startingHealth;
+        //currentHealth = startingHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         //audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioLead>();
+        if (PlayerData.Instance != null)
+        {
+            currentHealth = PlayerData.Instance.currentHealth;
+            Debug.Log("Health loaded from PlayerData: " + currentHealth);
+        }
+        else
+        {
+            currentHealth = startingHealth;
+            Debug.Log("Starting Health: " + currentHealth);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -27,6 +37,7 @@ public class Health : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+            PlayerData.Instance.currentHealth = currentHealth;
             if (currentHealth > 0)
             {
                 // player hurt
@@ -40,6 +51,12 @@ public class Health : MonoBehaviour
                 audioManager.PlaySFX(audioManager.motorexplode);
             }
         }
+    }
+    public void Heal(float healAmount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + healAmount, 0, startingHealth);
+        //PlayerData.Instance.currentHealth = currentHealth;
+        Debug.Log("Health after heal: " + currentHealth);
     }
 
     private void Die()

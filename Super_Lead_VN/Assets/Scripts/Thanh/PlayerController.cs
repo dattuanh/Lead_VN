@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
             health.TakeDamage(1);
             //audioManager.PlaySFX(audioManager.motorcrash);
         }
+        else if (collision.CompareTag("Item"))
+        {
+            health.Heal(1);
+            Destroy(collision.gameObject);
+        }
     }
 
     void TiltCharacter(bool isJumping)

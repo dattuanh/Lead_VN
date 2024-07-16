@@ -8,6 +8,7 @@ TagManager:
   - Finishing
   - Enemy
   - Audio
+  - Item
   layers:
   - Default
   - TransparentFX

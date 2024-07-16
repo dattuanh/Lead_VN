@@ -370,6 +370,7 @@
 "Assets/Scripts/Thanh/Healthbar.cs"
 "Assets/Scripts/Thanh/LeadController.cs"
 "Assets/Scripts/Thanh/PlayerController.cs"
+"Assets/Scripts/Thanh/PlayerData.cs"
 -langversion:9.0
 /deterministic
 /optimize+

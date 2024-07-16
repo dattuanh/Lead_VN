@@ -274,6 +274,8 @@ MonoBehaviour:
     spawnChance: 0.18
   - prefab_1: {fileID: 7438888581502997859, guid: 431caac1c85f70543ae1e255b0edfbea, type: 3}
     spawnChance: 0.1
+  - prefab_1: {fileID: 209221197324601748, guid: 04a287518bde5724eb8fc155f95c5e12, type: 3}
+    spawnChance: 0.05
   minSpawnRate: 1
   maxSpawnRate: 2
   finishingPointPrefab: {fileID: 3617024337820577115, guid: e5482ce806a61d743a24b5c71127ff00, type: 3}
@@ -450,7 +452,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010109202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -491,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102887820}
   - component: {fileID: 1102887821}
+  - component: {fileID: 1102887822}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -527,6 +530,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1694694976}
+--- !u!114 &1102887822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102887819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e22f196f8baf3f4580bf1e1b6266a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 3
 --- !u!1 &1128931696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,11 +1564,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2326863351126641332, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.04
+      value: -8.07
       objectReference: {fileID: 0}
     - target: {fileID: 2326863351126641332, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 2326863351126641332, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
       propertyPath: m_LocalPosition.z
