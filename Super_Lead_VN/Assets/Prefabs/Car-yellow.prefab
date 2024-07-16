@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1275966498176799431}
   - component: {fileID: 6361736994371137794}
   - component: {fileID: 2294700788534437283}
+  - component: {fileID: -973309114847579855}
   m_Layer: 0
   m_Name: Car-yellow
   m_TagString: Untagged
@@ -148,3 +149,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0000008042767, y: 0.08009445}
   m_Size: {x: 3.51982, y: 1.1858854}
   m_Direction: 1
+--- !u!114 &-973309114847579855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606797681799296265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5555561f7c7ec144495abe24c914a3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 2

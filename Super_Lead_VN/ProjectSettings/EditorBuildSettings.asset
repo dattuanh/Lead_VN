@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartUp.unity
     guid: 9b7b0d777881d574facc44f5ed1ce234
+  - enabled: 1
+    path: Assets/Scenes/DaiLoThangLong.unity
+    guid: 08d518427bf3ce042bbc03e4696f6819
+  - enabled: 1
+    path: Assets/Scenes/Night.unity
+    guid: 21de1718d35a80f468ca74e2af5037c0
+  - enabled: 1
+    path: Assets/Scenes/Morning.unity
+    guid: 7bbba9c18b28aa84fb50271b38dfe902
   m_configObjects: {}
