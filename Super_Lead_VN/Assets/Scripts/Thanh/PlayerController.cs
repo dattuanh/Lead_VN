@@ -6,16 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     float horizontalInput;
     bool isFacingRight = false;
-    float jumpPower = 7f;
+    float jumpPower = 9f;
     bool isGrounded = false;
     Rigidbody2D rb;
     //AudioSource audioSource;
-    AudioManager audioManager;
+    AudioLead audioManager;
     Health health;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioLead>();
     }
     void Start()
     {
@@ -36,11 +36,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+    }
+
+    // Method called when the player collides with another object
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isGrounded = true;
-        TiltCharacter(false);
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            TiltCharacter(false);
+        }
+        else if (collision.CompareTag("Enemy"))
         {
             health.TakeDamage(1);
             //audioManager.PlaySFX(audioManager.motorcrash);
@@ -53,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, -45);
         }
-        else if (isJumping && !isFacingRight)
+        if (isJumping && !isFacingRight)
         {
             transform.rotation = Quaternion.Euler(0, 0, 45);
         }

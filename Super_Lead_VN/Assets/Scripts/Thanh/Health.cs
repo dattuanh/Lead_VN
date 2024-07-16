@@ -12,14 +12,14 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     //AudioSource audioSource;
-    AudioManager audioManager;
+    AudioLead audioManager;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         //audioSource = GetComponent<AudioSource>();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioLead>();
     }
 
     public void TakeDamage(float damage)
