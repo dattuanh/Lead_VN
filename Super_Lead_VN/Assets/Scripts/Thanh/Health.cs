@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
 
+    DataManager dataManager;
+
     //AudioSource audioSource;
     AudioLead audioManager;
 
@@ -20,6 +22,7 @@ public class Health : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         //audioSource = GetComponent<AudioSource>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioLead>();
+        dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         if (PlayerData.Instance != null)
         {
             currentHealth = PlayerData.Instance.currentHealth;
@@ -49,6 +52,8 @@ public class Health : MonoBehaviour
                 // player died
                 Die();
                 audioManager.PlaySFX(audioManager.motorexplode);
+                Time.timeScale = 0;
+                dataManager.showEndPanel();
             }
         }
     }

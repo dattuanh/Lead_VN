@@ -1608,6 +1608,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8611683312825781454, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
+      propertyPath: m_Size.x
+      value: 2.4376602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611683312825781454, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16757633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611683312825781454, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00555721
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611683312825781454, guid: 517810ffcd4e8f9429357be72eac419f, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.2531214
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

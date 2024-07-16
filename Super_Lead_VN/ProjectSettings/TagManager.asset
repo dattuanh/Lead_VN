@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Audio
   - Item
+  - DataManager
+  - Transition
   layers:
   - Default
   - TransparentFX
